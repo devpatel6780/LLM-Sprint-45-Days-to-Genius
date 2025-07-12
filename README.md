@@ -17,4 +17,4 @@ To understand LLMs deeply and build real-world applications using them.
 
 ## 🚀 Stay tuned for more!
 
-Follow me on [LinkedIn](https://www.linkedin.com/in/devpatel6780) to see updates daily.
+Follow me on [LinkedIn]([https://www.linkedin.com/in/devpatel6780](https://www.linkedin.com/in/devrakeshpatel/)) to see updates daily.
