@@ -11,3 +11,6 @@
 ## 🔧 Tools Used
 - HuggingFace Transformers
 - TensorBoard (optional)
+
+- - ## 🔗 Notebook Link
+[🔗 Open Day 1 Notebook in Colab](https://colab.research.google.com/drive/18xGsltoVVteByCZtPiAXXesXYy2sfvfr)
