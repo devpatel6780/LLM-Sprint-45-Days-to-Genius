@@ -12,3 +12,6 @@
 ## 🛠️ Tools Explored
 - Google Colab
 - HuggingFace Docs
+
+- ## 🔗 Notebook Link
+[🔗 Open Day 1 Notebook in Colab](https://colab.research.google.com/drive/1RShcj7NLH_uJMsx0GRqdrLHPWdVv70r9)
