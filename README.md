@@ -14,6 +14,7 @@ To understand LLMs deeply and build real-world applications using them.
 | 1   | Introduction to LLMs                | Basics, motivation, architecture overview   |
 | 2   | Transformers & Attention            | Self-attention, positional encoding, demo   |
 | 3   | Embeddings + Training Techniques    | Word embeddings, pretraining, fine-tuning   |
+| 4   | Prompting + Finetuning              | Zero-shot, few-shot, CoT, GPT2 experiments  |
 
 ## 🚀 Stay tuned for more!
 
