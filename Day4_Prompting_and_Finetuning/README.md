@@ -14,4 +14,4 @@
 - Google Colab
 
 - ## 🔗 Notebook Link
-[🔗 Open Day 4 Notebook in Colab](https://colab.research.google.com/drive/1SWNPoDgny1ivUBi6wi0_2teMLfwZzwDT)
+[🔗 Open Day 4 Notebook in Colab](https://colab.research.google.com/drive/1Np3l4-sU-QfUEiSaL5d-Q1L1eMjRauUU)
