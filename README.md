@@ -16,6 +16,7 @@ To understand LLMs deeply and build real-world applications using them.
 | 3   | Embeddings + Training Techniques    | Word embeddings, pretraining, fine-tuning   |
 | 4   | Prompting + Finetuning              | Zero-shot, few-shot, CoT, GPT2 experiments  |
 | 5   | Smart Text Generator App (Project)  | Built a configurable LLM prompt playground  |
+| 6   | LLM Q&A App (Zero-Shot)             | Built a context-aware QA system using HF    |
 
 ## 🚀 Stay tuned for more!
 
