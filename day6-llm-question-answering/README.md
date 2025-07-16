@@ -28,7 +28,7 @@ Today, I built a simple and powerful **LLM-powered Question Answering App** usin
 - `day6_llm_qa_app.ipynb` → Main Google Colab Notebook
 
 ## 🔗 Run on Colab
-[👉 Open in Google Colab](https://colab.research.google.com/drive/1NWHaR9LlO7BlsPV0WWc3RxIg8pcLRaqg)
+[👉 Open in Google Colab](https://colab.research.google.com/drive/18FDjtKqGrh_orXJCvdIOOcy56JTWl_YY#scrollTo=nsSM1c4xLD5o)
 
 ## 🌟 Next Step
 We'll move toward **building retrieval-augmented generation apps** soon!
