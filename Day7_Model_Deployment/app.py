@@ -1,7 +1,50 @@
+
 import streamlit as st
 from transformers import pipeline
 
-# 1) Load a stronger model (fits in ~4 GB VRAM)
+# ─────────────────────────────────────────────
+# 🎯 App Setup
+st.set_page_config(page_title="Smart LLM Assistant", layout="centered")
+st.markdown(
+    """
+    <style>
+    .main {
+        background-color: #111827;
+        color: #f9fafb;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .stTextInput>div>div>input {
+        background-color: #1f2937;
+        color: white;
+    }
+    .stButton>button {
+        background-color: #ef4444;
+        color: white;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+    .stMarkdown h1 {
+        font-size: 2.5rem;
+        color: #facc15;
+    }
+    .response {
+        background-color: #1e293b;
+        padding: 1rem;
+        border-radius: 8px;
+        color: #f1f5f9;
+        font-size: 1.1rem;
+        margin-top: 1rem;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown("# 🤖 Smart LLM Assistant")
+st.markdown("##### *Powered by flan-t5-large + few-shot prompting*")
+
+# ─────────────────────────────────────────────
+# 🧠 Load the model (cached)
 @st.cache_resource
 def load_model():
     return pipeline(
@@ -12,9 +55,9 @@ def load_model():
 
 generator = load_model()
 
-# 2) Few-shot + template builder
+# ─────────────────────────────────────────────
+# 🧩 Prompt Constructor
 def build_prompt(user_q: str):
-    # A tiny demonstration showing Q→A style
     demo = (
         "Q: What is the Python programming language?\n"
         "A: Python is a high-level, interpreted programming language known for its readability, "
@@ -28,20 +71,20 @@ def build_prompt(user_q: str):
         instr = "Solve this problem step by step:\n"
     else:
         instr = "Explain clearly and concisely:\n"
-    # Combine demo + instruction + actual question
     return demo + instr + user_q + "\nA:"
 
-# 3) Streamlit UI
-st.set_page_config(page_title="Smart LLM Assistant", layout="centered")
-st.title("🤖 Smart LLM Assistant (flan-t5-large + few-shot)")
+# ─────────────────────────────────────────────
+# 🎯 App Interface
+st.markdown("#### 💬 Ask your question below:")
 
-q = st.text_input("💬 Your question or task:")
-if st.button("🚀 Go"):
+q = st.text_input("Enter a question, task, or prompt:")
+
+if st.button("🚀 Generate Response"):
     if not q.strip():
-        st.warning("Please enter a question or task.")
+        st.warning("⚠️ Please enter a valid prompt.")
     else:
         prompt = build_prompt(q)
-        with st.spinner("Generating…"):
+        with st.spinner("🧠 Thinking..."):
             out = generator(
                 prompt,
                 max_new_tokens=200,
@@ -51,11 +94,13 @@ if st.button("🚀 Go"):
                 repetition_penalty=1.2,
                 num_return_sequences=1
             )[0]["generated_text"]
-        # Trim off the “A:” label if echoed
-        answer = out.split("A:")[-1].strip()
-        st.markdown("### 🤖 Answer:")
-        st.write(answer)
 
-# Footer
+        answer = out.split("A:")[-1].strip()
+
+        st.markdown("### 🎯 Answer:")
+        st.markdown(f'<div class="response">{answer}</div>', unsafe_allow_html=True)
+
+# ─────────────────────────────────────────────
+# 📎 Footer
 st.markdown("---")
-st.caption("Model: google/flan-t5-large | Format demo + instruction → robust answers")
+st.caption("⚙️ Model: google/flan-t5-large | Prompting: demo + instruction → natural answers")
